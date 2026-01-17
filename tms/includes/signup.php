@@ -1,5 +1,7 @@
 <?php
-session_start();
+if (session_status() === PHP_SESSION_NONE) {
+	session_start();
+}
 error_reporting(0);
 include('includes/config.php');
 if(isset($_POST['submit']))
